@@ -87,7 +87,8 @@ const Index = () => {
             ))}
           </nav>
           <div className="flex items-center gap-5">
-            <a href="#" className="text-[12px] uppercase tracking-[0.6px] hidden md:inline">About</a>
+            <a href="#" className="text-[12px] uppercase tracking-[0.6px] hidden md:inline hover:text-charcoal/60">About</a>
+            <Link to="/seller?tab=pro" className="text-[12px] uppercase tracking-[0.6px] hidden md:inline hover:text-charcoal/60">Seller Hub Pro</Link>
             <button aria-label="Search"><Search className="h-5 w-5" strokeWidth={1.5} /></button>
             <button aria-label="Wishlist"><Heart className="h-5 w-5" strokeWidth={1.5} /></button>
             <button aria-label="Account"><User className="h-5 w-5" strokeWidth={1.5} /></button>
