@@ -207,6 +207,29 @@ const Index = () => {
           </div>
         </section>
 
+        {/* Seller Hub Pro CTA */}
+        <section className="px-4 md:px-8 lg:px-12 py-10">
+          <div className="relative overflow-hidden bg-charcoal text-white px-8 md:px-14 py-12 md:py-16 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div className="max-w-2xl">
+              <p className="text-[11px] font-medium uppercase tracking-[0.8px] text-white/60 mb-3 flex items-center gap-2">
+                <BarChart3 className="h-3.5 w-3.5" strokeWidth={1.5} /> Dla sprzedawców
+              </p>
+              <h3 className="text-2xl md:text-3xl font-normal mb-3 leading-tight">Seller Hub Pro — poznaj swoją realną marżę</h3>
+              <p className="text-sm text-white/70 leading-relaxed max-w-xl">
+                Zwroty, tickety i prowizja w jednym miejscu. Sprawdź, ile naprawdę zarabiasz na FashionHero.
+              </p>
+            </div>
+            <Link
+              to="/seller?tab=pro"
+              className="inline-flex items-center justify-center px-6 py-3 text-[12px] font-medium uppercase tracking-[0.6px] text-charcoal bg-white rounded-full hover:bg-white/90 transition shrink-0"
+            >
+              Otwórz Seller Hub Pro
+            </Link>
+          </div>
+        </section>
+
+
+
         {/* Features (3 column text) */}
         <section className="bg-cream px-6 md:px-12 py-20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
