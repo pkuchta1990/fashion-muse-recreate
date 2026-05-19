@@ -24,7 +24,7 @@ const Seller = () => {
             <h1 className="text-3xl font-normal text-charcoal">{sellerName}</h1>
           </header>
 
-          <Tabs defaultValue="overview" className="w-full">
+          <Tabs defaultValue={initialTab} className="w-full">
             <TabsList className="mb-6">
               <TabsTrigger value="overview">Przegląd</TabsTrigger>
               <TabsTrigger value="pro">Seller Hub Pro</TabsTrigger>
