@@ -6,9 +6,12 @@ import { ProGate } from "@/components/seller/ProGate";
 import { ProDashboard } from "@/components/seller/ProDashboard";
 import { orders, sellerName, totalGross } from "@/data/seller-fixtures";
 import { formatPLN } from "@/lib/format";
+import { useSearchParams } from "react-router-dom";
 
 const Seller = () => {
   const { isPro, activate, deactivate } = useProAccess();
+  const [searchParams] = useSearchParams();
+  const initialTab = searchParams.get("tab") === "pro" ? "pro" : "overview";
 
   return (
     <div className="min-h-screen flex flex-col bg-background text-charcoal font-sans">
@@ -21,7 +24,7 @@ const Seller = () => {
             <h1 className="text-3xl font-normal text-charcoal">{sellerName}</h1>
           </header>
 
-          <Tabs defaultValue="overview" className="w-full">
+          <Tabs defaultValue={initialTab} className="w-full">
             <TabsList className="mb-6">
               <TabsTrigger value="overview">Przegląd</TabsTrigger>
               <TabsTrigger value="pro">Seller Hub Pro</TabsTrigger>
