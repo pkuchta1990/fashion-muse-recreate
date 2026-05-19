@@ -1,4 +1,5 @@
-import { Search, Heart, User, ShoppingBag, ChevronLeft, ChevronRight } from "lucide-react";
+import { Search, Heart, User, ShoppingBag, ChevronLeft, ChevronRight, BarChart3 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const navLinks = ["MEN", "WOMEN", "SALE", "NEW"];
 
