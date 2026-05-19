@@ -9,9 +9,9 @@ export const initPostHog = () => {
   if (initialized || typeof window === "undefined") return;
   posthog.init(POSTHOG_KEY, {
     api_host: POSTHOG_HOST,
-    person_profiles: "identified_only",
+    disable_session_recording: true,
+    autocapture: true,
     capture_pageview: false,
-    capture_pageleave: true,
   });
   initialized = true;
 };
