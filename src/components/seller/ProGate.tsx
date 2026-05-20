@@ -1,3 +1,4 @@
+import { posthog } from "@/lib/posthog";
 import { useState } from "react";
 import { Lock, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -65,7 +66,7 @@ export const ProGate = ({ onActivate }: Props) => {
               <span className="text-3xl font-medium text-charcoal">{PRO_PRICE_PLN} zł</span>
               <span className="text-sm text-warm-gray">/ mies.</span>
             </div>
-            <Button onClick={() => setOpen(true)} className="w-full bg-charcoal hover:bg-charcoal/90 text-white">
+            <Button onClick={() => { setOpen(true); posthog.capture("seller_hub_pro_clicked", { source: "seller_page" }); }} className="w-full bg-charcoal hover:bg-charcoal/90 text-white">
               Aktywuj Seller Hub Pro
             </Button>
           </CardContent>

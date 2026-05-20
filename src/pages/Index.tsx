@@ -1,5 +1,6 @@
 import { Search, Heart, User, ShoppingBag, ChevronLeft, ChevronRight, BarChart3 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { posthog } from "@/lib/posthog";
 
 const navLinks = ["MEN", "WOMEN", "SALE", "NEW"];
 
@@ -88,7 +89,7 @@ const Index = () => {
           </nav>
           <div className="flex items-center gap-5">
             <a href="#" className="text-[12px] uppercase tracking-[0.6px] hidden md:inline hover:text-charcoal/60">About</a>
-            <Link to="/seller?tab=pro" className="text-[12px] uppercase tracking-[0.6px] hidden md:inline hover:text-charcoal/60">Seller Hub Pro</Link>
+            <Link to="/seller?tab=pro" className="text-[12px] uppercase tracking-[0.6px] hidden md:inline hover:text-charcoal/60" onClick={() => posthog.capture("seller_hub_pro_clicked", { source: "nav" })}>Seller Hub Pro</Link>
             <button aria-label="Search"><Search className="h-5 w-5" strokeWidth={1.5} /></button>
             <button aria-label="Wishlist"><Heart className="h-5 w-5" strokeWidth={1.5} /></button>
             <button aria-label="Account"><User className="h-5 w-5" strokeWidth={1.5} /></button>
@@ -223,6 +224,7 @@ const Index = () => {
             <Link
               to="/seller?tab=pro"
               className="inline-flex items-center justify-center px-6 py-3 text-[12px] font-medium uppercase tracking-[0.6px] text-charcoal bg-white rounded-full hover:bg-white/90 transition shrink-0"
+              onClick={() => posthog.capture("seller_hub_pro_clicked", { source: "cta_banner" })}
             >
               Otwórz Seller Hub Pro
             </Link>
